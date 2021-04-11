@@ -10,7 +10,7 @@ namespace Application.Activities
   {
     public class Command : IRequest
     {
-      public Guid id { get; set; }
+      public Guid Id { get; set; }
     }
 
     public class Handler : IRequestHandler<Command>
@@ -26,7 +26,7 @@ namespace Application.Activities
       public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
       {
         //logic goes here
-        var activity = await _context.Activities.FindAsync(request.id);
+        var activity = await _context.Activities.FindAsync(request.Id);
 
         if (activity == null)
         {
